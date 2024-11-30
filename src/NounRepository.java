@@ -1,7 +1,5 @@
 import DatabaseManager.DatabaseRequester;
 
-import java.sql.SQLException;
-
 public class NounRepository implements NamePartRepository{
     private final String table = "sys.nouns";
     private final String column = "noun_names";
@@ -12,7 +10,7 @@ public class NounRepository implements NamePartRepository{
     }
 
     @Override
-    public String get(DatabaseRequester requester) throws SQLException {
+    public String get(DatabaseRequester requester)  {
         return requester.getRandomValueFromColumn(table,column);
     }
 

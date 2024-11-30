@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DatabaseRequester {
     public Connection connection;
-    private String query = "SELECT * FROM %s ORDER BY RAND() LIMIT 1";
+    private final String query = "SELECT * FROM %s ORDER BY RAND() LIMIT 1";
     public DatabaseRequester(){
 
         this.connection = DatabaseConnection.getConnection();

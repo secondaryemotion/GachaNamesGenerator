@@ -1,6 +1,5 @@
 import DatabaseManager.DatabaseRequester;
 
-import java.sql.SQLException;
 
 public class ColorRepository implements NamePartRepository{
     private final String table = "sys.colors";
@@ -13,7 +12,7 @@ public class ColorRepository implements NamePartRepository{
     }
 
     @Override
-    public String get(DatabaseRequester requester) throws SQLException {
+    public String get(DatabaseRequester requester) {
         return requester.getRandomValueFromColumn(table,column);
     }
 

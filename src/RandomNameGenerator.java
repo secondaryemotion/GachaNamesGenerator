@@ -4,7 +4,6 @@ import java.sql.SQLException;
 
 public class RandomNameGenerator {
 
-    private DatabaseRequester requester;
     private NamePartRepository colorRepository;
     private NamePartRepository qualityRepository;
     private NamePartRepository nounRepository;

@@ -1,6 +1,5 @@
 import DatabaseManager.DatabaseRequester;
 
-import java.sql.SQLException;
 
 public class QualityRepository implements NamePartRepository{
     private final String table = "sys.qualities";
@@ -11,7 +10,7 @@ public class QualityRepository implements NamePartRepository{
         throw new UnsupportedOperationException();
     }
     @Override
-    public String get(DatabaseRequester requester) throws SQLException {
+    public String get(DatabaseRequester requester) {
         return requester.getRandomValueFromColumn(table,column);
     }
 

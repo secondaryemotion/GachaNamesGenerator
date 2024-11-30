@@ -1,6 +1,5 @@
 import DatabaseManager.*;
 
-
 public class ColorStubRepository implements NamePartRepository{
     private String[] colorElements = {"Red", "Blue","Violet"};
 

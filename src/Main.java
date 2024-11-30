@@ -3,7 +3,7 @@ import DatabaseManager.DatabaseRequester;
 import java.sql.SQLException;
 
 public class Main {
-    public void main (String[] arg) throws SQLException {
+    public void main (String[] args) throws SQLException {
         NamePartRepository colorRepository = new ColorRepository();
         NamePartRepository qualityRepository = new QualityRepository();
         NamePartRepository nounRepository = new NounRepository();
