@@ -1,4 +1,4 @@
-public class NameDatabase {
+public class NameRepository {
 
     String[] firstNames = {"Super","Mega","Legendary"};
     String[] secondNames = {"Red", "Blue","Violet"};

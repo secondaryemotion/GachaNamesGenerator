@@ -1,6 +1,7 @@
 public class Main {
     public void main (String[] arg) {
-        RandomNameGenerator generator = new RandomNameGenerator();
+        NameRepository database = new NameRepository();
+        RandomNameGenerator generator = new RandomNameGenerator(database);
         System.out.println(generator.generateName());
     }
 }
