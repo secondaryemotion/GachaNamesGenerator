@@ -1,16 +1,22 @@
+import DatabaseManager.DatabaseRequester;
+
 public class QualityStubRepository implements NamePartRepository{
-    private String[] qualityElements = {};
+    private String[] qualityElements = {"Super","Mega","Legendary"};
 
     @Override
-    public String get(int index) throws Exception{
+    public String get(int index) throws ArrayIndexOutOfBoundsException{
         if (index >= this.qualityElements.length){
-            throw new Exception("Index out of bounds"); // поискать эксепшен argumentOutOfRange
+            throw new ArrayIndexOutOfBoundsException();
         }
-        return "";
+        return this.qualityElements[index];
+    }
+
+    public String get(DatabaseRequester requester) {
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public int getElementsCount() {
-        return 0;
+        return this.qualityElements.length;
     }
 }
