@@ -11,7 +11,7 @@ public class QualityStubRepository implements NamePartRepository{
         return this.qualityElements[index];
     }
 
-    public String get(DatabaseRequester requester) {
+    public String get() {
         throw new UnsupportedOperationException();
     }
 

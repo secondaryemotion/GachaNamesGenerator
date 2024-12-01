@@ -4,13 +4,15 @@ import java.sql.SQLException;
 
 public class Main {
     public void main (String[] args) throws SQLException {
-        NamePartRepository colorRepository = new ColorRepository();
-        NamePartRepository qualityRepository = new QualityRepository();
-        NamePartRepository nounRepository = new NounRepository();
+
         DatabaseRequester requester = new DatabaseRequester();
+        NamePartRepository colorRepository = new ColorRepository(requester);
+        NamePartRepository qualityRepository = new QualityRepository(requester);
+        NamePartRepository nounRepository = new NounRepository(requester);
+
         RandomNameGenerator generator = new RandomNameGenerator(colorRepository,
                                                                 qualityRepository,
                                                                 nounRepository);
-        System.out.println(generator.generateName(requester));
+        System.out.println(generator.generateName());
     }
 }

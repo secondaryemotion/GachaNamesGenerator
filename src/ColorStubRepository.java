@@ -13,7 +13,7 @@ public class ColorStubRepository implements NamePartRepository{
     }
 
     @Override
-    public String get(DatabaseRequester requester) {
+    public String get() {
         throw new UnsupportedOperationException();
     }
 
