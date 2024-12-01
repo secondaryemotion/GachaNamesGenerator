@@ -11,12 +11,9 @@ public class QualityStubRepository implements NamePartRepository{
         return this.qualityElements[index];
     }
 
-    public String get() {
-        throw new UnsupportedOperationException();
-    }
-
     @Override
-    public int getElementsCount() {
-        return this.qualityElements.length;
+    public String getRandom() {
+        int index = (int) (Math.random()*qualityElements.length);
+        return get(index);
     }
 }

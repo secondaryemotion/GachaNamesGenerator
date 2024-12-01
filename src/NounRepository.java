@@ -3,7 +3,7 @@ import DatabaseManager.DatabaseRequester;
 public class NounRepository implements NamePartRepository{
     private final String table = "sys.nouns";
     private final String column = "noun_names";
-    private DatabaseRequester requester;
+    private final DatabaseRequester requester;
 
     public NounRepository(DatabaseRequester requester){
         this.requester = requester;
@@ -15,12 +15,8 @@ public class NounRepository implements NamePartRepository{
     }
 
     @Override
-    public String get()  {
+    public String getRandom()  {
         return requester.getRandomValueFromColumn(table,column);
     }
 
-    @Override
-    public int getElementsCount() {
-        throw new UnsupportedOperationException();
-    }
 }

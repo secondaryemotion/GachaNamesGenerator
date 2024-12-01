@@ -14,12 +14,10 @@ public class NounStubRepository implements NamePartRepository{
     }
 
     @Override
-    public String get() {
-        throw new UnsupportedOperationException();
+    public String getRandom() {
+        int index = (int) (Math.random()*nounElements.length);
+        return get(index);
     }
 
-    @Override
-    public int getElementsCount() {
-        return this.nounElements.length;
-    }
+
 }

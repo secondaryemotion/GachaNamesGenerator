@@ -13,12 +13,8 @@ public class ColorStubRepository implements NamePartRepository{
     }
 
     @Override
-    public String get() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public int getElementsCount() {
-        return this.colorElements.length;
+    public String getRandom() {
+        int index = (int) (Math.random()*colorElements.length);
+        return get(index);
     }
 }

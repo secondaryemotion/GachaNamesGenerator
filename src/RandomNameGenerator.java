@@ -1,5 +1,3 @@
-import DatabaseManager.DatabaseRequester;
-
 import java.sql.SQLException;
 
 public class RandomNameGenerator {
@@ -18,27 +16,14 @@ public class RandomNameGenerator {
     }
 
 
-    public String generateName() {
-        String color = generateNamePart(colorRepository);
-        String quality = generateNamePart(qualityRepository);
-        String noun = generateNamePart(nounRepository);
+
+    public String generateName() throws SQLException {
+        String color = colorRepository.getRandom();
+        String quality = qualityRepository.getRandom();
+        String noun = nounRepository.getRandom();
 
         return String.format(nameFormatString,color,quality,noun);
     }
 
-    public String generateName(DatabaseRequester requester) throws SQLException {
-        String color = colorRepository.get(requester);
-        String quality = qualityRepository.get(requester);
-        String noun = nounRepository.get(requester);
-
-        return String.format(nameFormatString,color,quality,noun);
-    }
-
-    public String generateNamePart(NamePartRepository nameRepository){
-        int elementsCount = nameRepository.getElementsCount();
-        int randomIndex = (int) (Math.random()* elementsCount);
-
-        return nameRepository.get(randomIndex);
-    }
 
 }
