@@ -1,8 +1,5 @@
-import DatabaseManager.DatabaseRequester;
-
-
 public class NounStubRepository implements NamePartRepository{
-    private String[] nounElements = {"Plasma TV","Terrifier 3000"};
+    private final String[] nounElements = {"Plasma TV","Terrifier 3000"};
 
 
     @Override
@@ -15,9 +12,35 @@ public class NounStubRepository implements NamePartRepository{
 
     @Override
     public String getRandom() {
-        int index = (int) (Math.random()*nounElements.length);
+        int index = (int) (Math.random()*nounElements.length-1);
         return get(index);
     }
+
+    @Override
+    public String[] getAllValues(){
+        return nounElements;
+    }
+
+    @Override
+    public void createTableIfNotExists(){
+       throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void addValueToTable(String value){
+       throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void updateValue(String oldValue, String newValue){
+       throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteValue(String value){
+       throw new UnsupportedOperationException();
+    }
+
 
 
 }

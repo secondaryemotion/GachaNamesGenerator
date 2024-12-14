@@ -1,7 +1,5 @@
-import DatabaseManager.*;
-
 public class ColorStubRepository implements NamePartRepository{
-    private String[] colorElements = {"Red", "Blue","Violet"};
+    private final String[] colorElements = {"Red", "Blue","Violet"};
 
 
     @Override
@@ -14,7 +12,34 @@ public class ColorStubRepository implements NamePartRepository{
 
     @Override
     public String getRandom() {
-        int index = (int) (Math.random()*colorElements.length);
+        int index = (int) (Math.random()*colorElements.length-1);
         return get(index);
     }
+
+    @Override
+    public String[] getAllValues(){
+        return colorElements;
+    }
+
+    @Override
+    public void createTableIfNotExists(){
+       throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void addValueToTable(String value){
+       throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void updateValue(String oldValue, String newValue){
+       throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteValue(String value){
+       throw new UnsupportedOperationException();
+    }
+
+
 }

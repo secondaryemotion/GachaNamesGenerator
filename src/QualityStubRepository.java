@@ -1,7 +1,5 @@
-import DatabaseManager.DatabaseRequester;
-
 public class QualityStubRepository implements NamePartRepository{
-    private String[] qualityElements = {"Super","Mega","Legendary"};
+    private final String[] qualityElements = {"Super","Mega","Legendary"};
 
     @Override
     public String get(int index) throws ArrayIndexOutOfBoundsException{
@@ -13,7 +11,34 @@ public class QualityStubRepository implements NamePartRepository{
 
     @Override
     public String getRandom() {
-        int index = (int) (Math.random()*qualityElements.length);
+        int index = (int) (Math.random()*qualityElements.length-1);
         return get(index);
     }
+
+    @Override
+    public String[] getAllValues(){
+        return qualityElements;
+    }
+
+    @Override
+    public void createTableIfNotExists(){
+       throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void addValueToTable(String value){
+       throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void updateValue(String oldValue, String newValue){
+       throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteValue(String value){
+       throw new UnsupportedOperationException();
+    }
+
+
 }

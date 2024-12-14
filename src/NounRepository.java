@@ -7,6 +7,7 @@ public class NounRepository implements NamePartRepository{
 
     public NounRepository(DatabaseRequester requester){
         this.requester = requester;
+        createTableIfNotExists();
     }
 
     @Override
@@ -19,4 +20,27 @@ public class NounRepository implements NamePartRepository{
         return requester.getRandomValueFromColumn(table,column);
     }
 
+    public String[] getAllValues(){
+        return requester.getAllValuesFromColumn(table,column);
+    }
+
+        @Override
+    public void createTableIfNotExists() {
+        requester.createNewTable(table,column);
+    }
+
+    @Override
+    public void addValueToTable(String value){
+        requester.createValueInColumn(table,column,value);
+    }
+
+    @Override
+    public void updateValue(String oldValue, String newValue){
+        requester.updateValueInColumn(table,column,oldValue,newValue);
+    }
+
+    @Override
+    public void deleteValue(String value){
+        requester.deleteValueInColumn(table,column,value);
+    }
 }

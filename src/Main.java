@@ -9,10 +9,7 @@ public class Main {
         NamePartRepository colorRepository = new ColorRepository(requester);
         NamePartRepository qualityRepository = new QualityRepository(requester);
         NamePartRepository nounRepository = new NounRepository(requester);
+        new NameGeneratorPresenter(colorRepository,qualityRepository,nounRepository);
 
-        RandomNameGenerator generator = new RandomNameGenerator(colorRepository,
-                                                                qualityRepository,
-                                                                nounRepository);
-        System.out.println(generator.generateName());
     }
 }
