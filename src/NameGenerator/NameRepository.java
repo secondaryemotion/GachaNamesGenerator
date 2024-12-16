@@ -1,3 +1,5 @@
+package NameGenerator;
+
 public class NameRepository {
 
     String[] firstNames = {"Super","Mega","Legendary"};

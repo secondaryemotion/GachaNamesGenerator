@@ -1,4 +1,6 @@
-import DatabaseManager.DatabaseRequester;
+package NameGenerator;
+
+import NameGenerator.DatabaseManager.DatabaseRequester;
 
 
 public class ColorRepository implements NamePartRepository{

@@ -1,4 +1,8 @@
-import DatabaseManager.DatabaseRequester;
+import NameGenerator.DatabaseManager.DatabaseRequester;
+import NameGenerator.ColorRepository;
+import NameGenerator.NamePartRepository;
+import NameGenerator.NounRepository;
+import NameGenerator.QualityRepository;
 
 import java.sql.SQLException;
 
@@ -9,7 +13,7 @@ public class Main {
         NamePartRepository colorRepository = new ColorRepository(requester);
         NamePartRepository qualityRepository = new QualityRepository(requester);
         NamePartRepository nounRepository = new NounRepository(requester);
-        new NameGeneratorPresenter(colorRepository,qualityRepository,nounRepository);
-
+        NameGeneratorPresenter presenter = new NameGeneratorPresenter(colorRepository,qualityRepository,nounRepository);
+        presenter.enterStartMenu();
     }
 }

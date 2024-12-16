@@ -1,3 +1,5 @@
+package NameGenerator;
+
 public class NounStubRepository implements NamePartRepository{
     private final String[] nounElements = {"Plasma TV","Terrifier 3000"};
 

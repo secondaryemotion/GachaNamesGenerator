@@ -1,3 +1,5 @@
+package NameGenerator;
+
 import java.sql.SQLException;
 
 public interface NamePartRepository {

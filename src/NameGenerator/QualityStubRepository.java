@@ -1,24 +1,25 @@
-public class ColorStubRepository implements NamePartRepository{
-    private final String[] colorElements = {"Red", "Blue","Violet"};
+package NameGenerator;
 
+public class QualityStubRepository implements NamePartRepository{
+    private final String[] qualityElements = {"Super","Mega","Legendary"};
 
     @Override
     public String get(int index) throws ArrayIndexOutOfBoundsException{
-        if (index >= this.colorElements.length){
+        if (index >= this.qualityElements.length){
             throw new ArrayIndexOutOfBoundsException();
         }
-        return this.colorElements[index];
+        return this.qualityElements[index];
     }
 
     @Override
     public String getRandom() {
-        int index = (int) (Math.random()*colorElements.length-1);
+        int index = (int) (Math.random()*qualityElements.length-1);
         return get(index);
     }
 
     @Override
     public String[] getAllValues(){
-        return colorElements;
+        return qualityElements;
     }
 
     @Override

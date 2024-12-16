@@ -1,4 +1,6 @@
-import DatabaseManager.DatabaseRequester;
+package NameGenerator;
+
+import NameGenerator.DatabaseManager.DatabaseRequester;
 
 public class NounRepository implements NamePartRepository{
     private final String table = "sys.nouns";
