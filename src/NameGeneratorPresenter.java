@@ -129,12 +129,13 @@ public class NameGeneratorPresenter {
 
     private void enterAddNewValuesMenu() {
         NamePartRepository repository = enterTableSelectionMenu();
-        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Enter value and press Enter. Press 0 to exit.");
+        Scanner scanner = new Scanner(System.in);
         String inputLine = scanner.nextLine();
         while (!inputLine.equals("0")) {
+            repository.addValue(inputLine);
             inputLine = scanner.nextLine();
-            repository.addValueToTable(inputLine);
         }
     }
 
@@ -150,8 +151,8 @@ public class NameGeneratorPresenter {
 
     private void enterDeleteValueMenu() {
         NamePartRepository repository = enterTableSelectionMenu();
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter value you want to delete and press Enter.");
+        Scanner scanner = new Scanner(System.in);
         String value = scanner.nextLine();
         repository.deleteValue(value);
 

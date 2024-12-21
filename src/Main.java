@@ -7,7 +7,7 @@ import NameGenerator.QualityRepository;
 import java.sql.SQLException;
 
 public class Main {
-    public void main (String[] args) throws SQLException {
+    public static void main (String[] args) throws SQLException {
 
         DatabaseRequester requester = new DatabaseRequester();
         NamePartRepository colorRepository = new ColorRepository(requester);

@@ -62,8 +62,9 @@ public class DatabaseRequester {
     public void createValueInColumn(String table, String column, String value){
         try {
             Statement statement = connection.createStatement();
-            String query = "INSERT INTO %s (%s) VALUE (%s)";
-            statement.executeQuery(String.format(query,table,column,value));
+            String query = "INSERT INTO %s (%s) VALUE (\"%s\")";
+
+            statement.executeUpdate(String.format(query,table,column,value));
 
         } catch (SQLException e){
             throw new RuntimeException("unhandled",e);
@@ -73,8 +74,8 @@ public class DatabaseRequester {
     public void updateValueInColumn(String table, String column, String oldValue, String newValue){
         try {
             Statement statement = connection.createStatement();
-            String query = "UPDATE %s SET %s = (%s) WHERE %s = (%s)";
-            statement.executeQuery(String.format(query,table,column,oldValue,column,newValue));
+            String query = "UPDATE %s SET %s = (\"%s\") WHERE %s = (\"%s\")";
+            statement.executeUpdate(String.format(query,table,column,newValue,column,oldValue));
         } catch (SQLException e){
             throw new RuntimeException("unhandled",e);
         }
@@ -83,8 +84,8 @@ public class DatabaseRequester {
     public void deleteValueInColumn(String table, String column, String value){
         try {
             Statement statement = connection.createStatement();
-            String query = "DELETE FROM %s WHERE %s = (%s)";
-            statement.executeQuery(String.format(query,table,column,value));
+            String query = "DELETE FROM %s WHERE %s = (\"%s\")";
+            statement.executeUpdate(String.format(query,table,column,value));
         } catch (SQLException e){
             throw new RuntimeException("unhandled",e);
         }
@@ -98,7 +99,7 @@ public class DatabaseRequester {
                         "%s VARCHAR(45) NOT NULL," +
                         "PRIMARY KEY (id), " +
                         "UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE)";
-                statement.execute(String.format(query,table,column));
+                statement.executeUpdate(String.format(query,table,column));
             } catch (SQLException e){
                 throw new RuntimeException("unhandled",e);
         }

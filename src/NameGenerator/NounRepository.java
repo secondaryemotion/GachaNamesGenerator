@@ -32,7 +32,7 @@ public class NounRepository implements NamePartRepository{
     }
 
     @Override
-    public void addValueToTable(String value){
+    public void addValue(String value){
         requester.createValueInColumn(table,column,value);
     }
 

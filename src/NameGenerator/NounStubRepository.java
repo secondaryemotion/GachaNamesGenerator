@@ -29,7 +29,7 @@ public class NounStubRepository implements NamePartRepository{
     }
 
     @Override
-    public void addValueToTable(String value){
+    public void addValue(String value){
        throw new UnsupportedOperationException();
     }
 
