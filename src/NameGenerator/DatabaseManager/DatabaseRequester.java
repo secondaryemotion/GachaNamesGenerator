@@ -1,16 +1,18 @@
 package NameGenerator.DatabaseManager;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class DatabaseRequester {
     public Connection connection;
 
-    public DatabaseRequester(){
-
-        this.connection = DatabaseConnection.getConnection();
+    public DatabaseRequester(DatabaseConnectionSpec databaseConnectionSpec){
+        try {
+            this.connection = DriverManager.getConnection(databaseConnectionSpec.getUser(),
+                    databaseConnectionSpec.getPassword(),
+                    databaseConnectionSpec.getConnectionString());
+        } catch (SQLException e){
+            throw new RuntimeException("unhandled",e);
+        }
     }
 
     public String getRandomValueFromColumn(String table, String column) {
